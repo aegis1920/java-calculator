@@ -3,16 +3,11 @@ package calculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static calculator.util.ExceptionHandler.*;
+import static calculator.util.InputHandler.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class ExceptionHandlerTest {
+public class InputHandlerTest {
 
     @Test
     @DisplayName("입력값을 체크해주는 테스트")

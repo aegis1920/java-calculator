@@ -1,6 +1,6 @@
 package calculator.domain;
 
-import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 public enum Operator {
     PLUS("+", (nowNumber, returnValue) -> returnValue + nowNumber),
@@ -9,9 +9,9 @@ public enum Operator {
     DIVIDE("/", (nowNumber, returnValue) -> returnValue / nowNumber);
 
     private String operator;
-    private BiFunction<Double, Double, Double> expression;
+    private BinaryOperator<Double> expression;
 
-    Operator(String operator, BiFunction<Double, Double, Double> expression) {
+    Operator(String operator, BinaryOperator<Double> expression) {
         this.operator = operator;
         this.expression = expression;
     }

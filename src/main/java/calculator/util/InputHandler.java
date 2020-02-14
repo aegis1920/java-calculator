@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static calculator.domain.Calculator.isEven;
 import static calculator.domain.Calculator.isOdd;
 
-public class ExceptionHandler {
+public class InputHandler {
     private static final int EVEN = 0;
     private static final String DELIMITER = " ";
     private static final String BLANK = " ";
@@ -18,17 +18,14 @@ public class ExceptionHandler {
     private static List<String> operatorList = Arrays.asList("+", "-", "*", "/");
 
     public static String checkInputHandler(String input) {
-        if (checkString(input.split(DELIMITER)) == true && checkUndefinedValue(input) == true) {
+        if (checkString(input.split(DELIMITER)) && checkUndefinedValue(input)) {
             return input;
         }
         throw new IllegalArgumentException();
     }
 
     public static boolean checkUndefinedValue(String str) {
-        if (str.replace(BLANK, EMPTY_STRING).contains(DIVIDE_ZERO_STRING)) {
-            return false;
-        }
-        return true;
+        return !str.replace(BLANK, EMPTY_STRING).contains(DIVIDE_ZERO_STRING);
     }
 
     public static boolean checkString(String[] inputStrings) {
@@ -56,10 +53,6 @@ public class ExceptionHandler {
     }
 
     public static boolean checkSign(String inputString) {
-        if (operatorList.contains(inputString)) {
-            return true;
-        }
-        return false;
+        return operatorList.contains(inputString);
     }
-
 }

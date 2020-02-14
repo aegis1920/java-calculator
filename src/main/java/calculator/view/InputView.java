@@ -3,7 +3,7 @@ package calculator.view;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static calculator.util.ExceptionHandler.checkInputHandler;
+import static calculator.util.InputHandler.checkInputHandler;
 
 public class InputView {
 
